@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(mountains.jpg) no-repeat center;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 1px;
+        transform-style: preserve-3d;
+    }
+    p{
+        position: absolute;
+        color: white;
+        font-weight: 400;
+        font-size: xx-large;
+        transform: perspective(-1px) scale(2);
+        /* animation: animate 2s linear; */
+    }
+    @keyframes animate{
+        from{
+            opacity: 0;
+           left: 0;
+        }
+        to{
+            opacity: 1;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+</style>
+<body>
+    <div class="container">
+        <p>Discover.</p>
+    </div>
+    <div>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam provident doloribus voluptatum ipsa nihil saepe earum quod culpa itaque? Facilis excepturi laudantium deserunt repudiandae ea dicta nihil? Excepturi quos eaque aliquam recusandae architecto nam corrupti perferendis suscipit, blanditiis, culpa in?
+        </p>
+    </div>
+
+    <script>
+        const para=document.querySelector("p");
+        document.addEventListener("scroll",function(){
+            let value=window.scrollY;
+            style.para.top=value*3+'px';
+        })
+    </script>
+</body>
+</html>
